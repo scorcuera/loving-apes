@@ -8,8 +8,8 @@ const router = Router();
 
 router.get("/", imageController.getImages);
 router.get("/:id", imageController.getImage);
-router.post("/", uploader.single('image_url'), imageController.addImage);
-router.put("/:id", uploader.single('image_url'), imageController.updateImage);
+router.post("/", uploader.single('url'), imageController.addImage);
+router.put("/:id", uploader.single('url'), imageController.updateImage);
 router.delete("/:id", imageController.deleteImage);
 
 export default router;
