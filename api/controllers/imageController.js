@@ -39,8 +39,8 @@ const addImage = async (req, res) => {
     try {
         const { body, file } = req;
         const name = body.name;
-        const image_url = body.image_url || file.filename;
-        const image = {name, image_url};
+        const url = body.url || file.filename;
+        const image = {name, url};
         const connection = await getConnection();
         const result = await connection.query("INSERT INTO apes SET ?", image);
         res.status(201);
@@ -58,8 +58,8 @@ const updateImage = async (req, res) => {
         const { id } = req.params;
         const { body, file } = req;
         const name = body.name;
-        const image_url = body.image_url || file.filename;
-        const image = {name, image_url};
+        const url = body.url || file.filename;
+        const image = {name, url};
         const connection = await getConnection();
         const result = await connection.query("UPDATE apes SET ? WHERE id = ?", [image, id]);
         if (res.status(200)) {
