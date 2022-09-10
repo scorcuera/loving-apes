@@ -12,7 +12,7 @@ import router from "./routes/router";
 const app = express();
 
 // Settings
-app.set("port", 4000);
+app.set("port", 5000);
 
 app.use(morgan("dev")); 
 app.use(express.json());
