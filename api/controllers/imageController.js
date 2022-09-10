@@ -3,7 +3,7 @@ import { getConnection } from "../database/database";
 const getImages = async (req, res) => {
     try {
         const connection = await getConnection();
-        const result = await connection.query("SELECT id, name, url FROM apes-data");
+        const result = await connection.query("SELECT id, name, url FROM apes");
         res.json(result);
     } catch (error) {
         res.status(500);
@@ -15,7 +15,7 @@ const getImage = async (req, res) => {
     try {
         const { id } = req.params;
         const connection = await getConnection();
-        const result = await connection.query("SELECT id, name, url FROM apes-data WHERE id = ?", id);
+        const result = await connection.query("SELECT id, name, url FROM apes WHERE id = ?", id);
         res.json(result);
     } catch (error) {
         res.status(500);
@@ -27,7 +27,7 @@ const deleteImage = async (req, res) => {
     try {
         const { id } = req.params;
         const connection = await getConnection();
-        const result = await connection.query("DELETE FROM apes-data WHERE id = ?", id);
+        const result = await connection.query("DELETE FROM apes WHERE id = ?", id);
         res.json(result);
     } catch (error) {
         res.status(500);
@@ -42,7 +42,7 @@ const addImage = async (req, res) => {
         const image_url = body.image_url || file.filename;
         const image = {name, image_url};
         const connection = await getConnection();
-        const result = await connection.query("INSERT INTO apes-data SET ?", image);
+        const result = await connection.query("INSERT INTO apes SET ?", image);
         res.status(201);
         if (res.status(201)) {
             res.json(req.body);
@@ -61,7 +61,7 @@ const updateImage = async (req, res) => {
         const image_url = body.image_url || file.filename;
         const image = {name, image_url};
         const connection = await getConnection();
-        const result = await connection.query("UPDATE apes-data SET ? WHERE id = ?", [image, id]);
+        const result = await connection.query("UPDATE apes SET ? WHERE id = ?", [image, id]);
         if (res.status(200)) {
             res.json(req.body);
         }
