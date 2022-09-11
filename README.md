@@ -3,11 +3,12 @@
 Do you love our apes' cousins as much as I do? What's your favorite ape ? Mine are bonobos !
 This is a basic app to register your favorites apes and monkeys' images, along with their names and, in the future, some information about them.
 
+<div float="left">
 <img src="./assets/home_view.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 <img src="./assets/create_view.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 <img src="./assets/create_uploaded_view.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 <img src="./assets/edit_view.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
-
+</div>
 # Setting up the environment
 
 The app has been designed as a monorepo, so the following commands can be run from the root directory.
@@ -83,5 +84,6 @@ The fact that they belong to the JS ecosystem helped me a lot, since JS is my na
 * Handle with more detailed status the HTTP responses
 * Incorporate tests to the frontend
 * Improve the visual design of the app
+* Improve UX experience in the frontend
 * Generate a CHANGELOG of the commit history
 * Adapt to the Desktop version ! (prioritized the mobile version)
