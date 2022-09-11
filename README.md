@@ -58,8 +58,10 @@ Currently, only the API is tested. In order to run the tests, you should be plac
 
 The followed architecture to build the API was the <strong> 3 Layer Architecture </strong>. It consists of three instances to interact between the router and the database.
 
-![3 Layer Architecture](https://www.freecodecamp.org/news/content/images/2022/04/Bildschirmfoto-2022-04-25-um-14.33.24-1.png)
+<img src="https://www.freecodecamp.org/news/content/images/2022/04/Bildschirmfoto-2022-04-25-um-14.33.24-1.png" width="400" height="450" />
+
 Source: "REST API Design. Best Practices", from FreeCodeCamp.
+
 
 After some days of research, I wanted to try this framework for two reasons: I had never tried it before and it seemed easy. It turned out to be not that easy to build, but it was due more to ignorance of the tech stack than the architecture, as I'm going to explain later on this article.
 
@@ -73,6 +75,8 @@ The same was attempted in the frontend. In this case, I had the enormous help fr
 
 As its name points out, they refer to a convention on how to write your commits. The benefit, as explained in the official website is that <em> "it provides an easy set of rules for creating an explicit commit history"</em> 
 I've followed this protocol all along the project, as can be seen in the commit history.
+
+Link to the official documentation: [Conventional commits](https://www.conventionalcommits.org/en/v1.0.0/)
 
 # Tech stack
 
