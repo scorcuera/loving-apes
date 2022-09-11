@@ -1,13 +1,15 @@
 <template>
     <div>
         <h2>Editing {{name}} image</h2>
-        <form @submit.prevent="updateImage(id)" enctype="multipart/form-data">
-            <div class="card" style="width: 18rem;">
+        <form @submit.prevent="updateImage(id)" enctype="multipart/form-data" class="mx-3 pt-2">
+            <div class="card" style="width: 100%">
                 <input type="file" name="imageFile" class="imagePreLoad card-img-top" id="imageFile" @change="uploadFile"></input>
                 <div class="card-body">
-                    <label>Enter a new name</label>
-                    <input type="text" name="name" :placeholder="name" v-model="newName">
+                    <label class="mb-2" style="font-size: 1.2rem;">Enter a new name</label>
+                    <div class="d-flex justify-content-evenly">
+                         <input class="mr-1" type="text" name="name" :placeholder="name" v-model="newName">
                     <button type="submit" class="btn btn-success">Save</button>
+                    </div>
                 </div>
             </div>
         </form>
@@ -29,7 +31,8 @@
     color: transparent;
     min-width: 300px;
     height: 300px;
-    background-size: cover;
+    background-size: 220px;
+    background-repeat: no-repeat;
     background-position: center;
 }
 </style>
