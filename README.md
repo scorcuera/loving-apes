@@ -9,6 +9,7 @@ This is a basic app to register your favorites apes and monkeys' images, along w
 <img src="./assets/create_uploaded_view.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 <img src="./assets/edit_view.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="200" height="400" />
 </div>
+
 # Setting up the environment
 
 The app has been designed as a monorepo, so the following commands can be run from the root directory.
