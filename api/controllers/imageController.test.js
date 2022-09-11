@@ -22,7 +22,7 @@ describe('Images API', () => {
     });
     test('GET /images/id should return a specific image by ID', async () => {
         return request(app)
-            .get('/api/images/1')
+            .get('/api/images/18')
             .expect('Content-Type', /json/)
             .expect(200)
             .then(response => {
@@ -61,10 +61,10 @@ describe('Images API', () => {
     });
     test('PUT /images/id should modify a specific image', async () => {
         return request(app)
-            .put('/api/images/2')
+            .put('/api/images/18')
             .send({
-                name: 'gorilla',
-                url: 'gorilla.jpeg'
+                name: 'chimp',
+                url: 'chimp.jpeg'
             })
             .expect('Content-Type', /json|text\/html/)
             .expect(200)
@@ -72,8 +72,8 @@ describe('Images API', () => {
                 console.log(response.body);
                 expect(response.body).toEqual(
                         expect.objectContaining({
-                            name: 'gorilla',
-                            url: 'gorilla.jpeg'
+                            name: 'chimp',
+                            url: 'chimp.jpeg'
                         })
                 )
             })
