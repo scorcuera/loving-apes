@@ -1,9 +1,8 @@
-import { getConnection } from "../database/database";
+import { methods as imageService} from "../services/imageService"
 
 const getImages = async (req, res) => {
     try {
-        const connection = await getConnection();
-        const result = await connection.query("SELECT id, name, url FROM apes");
+        const result = await imageService.queryAllImages();
         res.json(result);
     } catch (error) {
         res.status(500);
@@ -14,8 +13,7 @@ const getImages = async (req, res) => {
 const getImage = async (req, res) => {
     try {
         const { id } = req.params;
-        const connection = await getConnection();
-        const result = await connection.query("SELECT id, name, url FROM apes WHERE id = ?", id);
+        const result = await imageService.queryAnImage(id);
         res.json(result);
     } catch (error) {
         res.status(500);
@@ -26,8 +24,7 @@ const getImage = async (req, res) => {
 const deleteImage = async (req, res) => {
     try {
         const { id } = req.params;
-        const connection = await getConnection();
-        const result = await connection.query("DELETE FROM apes WHERE id = ?", id);
+        const result = await imageService.queryDeleteAnImage(id);
         res.json(result);
     } catch (error) {
         res.status(500);
@@ -41,8 +38,7 @@ const addImage = async (req, res) => {
         const name = body.name;
         const url = body.url || file.filename;
         const image = {name, url};
-        const connection = await getConnection();
-        const result = await connection.query("INSERT INTO apes SET ?", image);
+        const result = await imageService.queryAddImage(image);
         res.status(201);
         if (res.status(201)) {
             res.json(req.body);
@@ -60,8 +56,7 @@ const updateImage = async (req, res) => {
         const name = body.name;
         const url = body.url || file.filename;
         const image = {name, url};
-        const connection = await getConnection();
-        const result = await connection.query("UPDATE apes SET ? WHERE id = ?", [image, id]);
+        const result = await imageService.queryUpdateImage(id, image);
         if (res.status(200)) {
             res.json(req.body);
         }
