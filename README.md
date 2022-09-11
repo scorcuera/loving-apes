@@ -42,7 +42,7 @@ And to bootstrap the app and watch it working on your web:
 
 ## Testing the app
 
-Currently, only the API is tested. In order to run the tests, you can execute:
+Currently, only the API is tested. In order to run the tests, you should be placed in the `api` package and execute:
 
 `npm run test`
 
